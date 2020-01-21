@@ -65,10 +65,6 @@ print(adictionary)
 # classes (print out the number, not the list/dictionary) you plan 
 # to take.
 
+print(alist)
 print(adictionary)
 print(len(adictionary))
-
-
-
-
-
