@@ -1,20 +1,3 @@
-#%%
-# print("Hello world!")
-
-#%%[markdown]
-# # Sample markdown cell
-#
-# This is a sample markdown cell.  
-# Two spaces in the previous line doesn't make a new line in this environment. 
-#
-# You will need a blank line to get a new paragraph.
-
-# The above is not considered a blank line without the # sign.
-#
-# This can get you a [link](http://www.gwu.edu).
-#
-# You can find some cheatsheets to do other basic stuff like bold-face, italicize, tables, etc.
-
 #%%[markdown]
 # Question 1: Create a Markdown cell with the followings:
 # Two paragraphs about yourself. In one of the paragraphs, give a hyperlink of a website 
