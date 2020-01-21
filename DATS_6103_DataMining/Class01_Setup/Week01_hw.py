@@ -57,8 +57,18 @@ print (alist)
 # probably doesn't like coal. And that coal mining class doesn't even have a 
 # course number.
 
+adictionary = { "DATS6101":"Introduction to Data Science", "DATS6102":"Data Warehousing","":"Introduction to Coal Mining","DATS6501":"Data Science Capstone","DATS6202":"Machine Learning I: Algorithm Analysis","DATS6401":"Visualization of Complex Data"}
+print(adictionary)
+
 #%%
 # Question 5: print out and show your advisor how many 
 # classes (print out the number, not the list/dictionary) you plan 
 # to take.
+
+print(adictionary)
+print(len(adictionary))
+
+
+
+
 
