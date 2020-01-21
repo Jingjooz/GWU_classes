@@ -39,14 +39,16 @@
 # Then print out the last entry in your list.
 
 # list / array
-alist = [1,'Introduction to Data Science',1,'Data Warehousing',1,'Introduction to Data Mining',1,'Data Science Capstone',1,'Machine Learning I: Algorithm Analysis',1,'Visualization of Complex Data']
+alist = ['Introduction to Data Science','Data Warehousing','Introduction to Data Mining','Data Science Capstone','Machine Learning I: Algorithm Analysis','Visualization of Complex Data']
 print (alist[-1])
 
 #%%
 # Question 3: After you completed question 2, you feel Intro to data mining is too stupid, so you are going 
 # to replace it with Intro to Coal mining. Do that in python here.
 
-
+alist = ['Introduction to Data Science','Data Warehousing','Introduction to Data Mining','Data Science Capstone','Machine Learning I: Algorithm Analysis','Visualization of Complex Data']
+alist[2] = "Introduction to Coal Mining"
+print (alist)
 
 #%%
 # Question 4: Before you go see your acadmic advisor, you are 
