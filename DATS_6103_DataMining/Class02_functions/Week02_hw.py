@@ -8,7 +8,12 @@ print("Hello world!")
 # Our Goal: print out the 366 days in 2020
 # 2020/1/1 
 # 2020/1/2 and so forth
-#
+
+from datetime import date, timedelta
+First_date = date(2020, 1, 1)
+Last_date = date(2020, 12, 31)
+for i in range(((Last_date - First_date).days) + 1):
+   print((First_date + timedelta(i)).strftime("%Y/%m/%d"))
 
 #%%
 ###################################### Q1 ###############################
@@ -22,9 +27,11 @@ month = m+1 # this is the month to be displayed/printed. The way it is set up no
 maxdays = 7 # this variable will be conditional on the month eventually. Right now, just try 7
 # write a for loop, to print out the day value
 # fill in the ??????
-for d in ?????? :
+
+for d in range(((Last_date - First_date).days)):
   day = d+1
-  print( ?????? )
+  print((First_date + timedelta(day)).strftime("%A - %Y/%m/%d"))
+
 
 #%%
 ###################################### Q2 ###############################
