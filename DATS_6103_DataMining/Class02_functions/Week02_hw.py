@@ -3,6 +3,9 @@
 # import os
 print("Hello world!")
 
+ 
+
+
 #%%
 ###############  HW  Week02      HW  Week02      HW  Week02    ###############
 # Our Goal: print out the 366 days in 2020
@@ -14,6 +17,72 @@ First_date = date(2020, 1, 1)
 Last_date = date(2020, 12, 31)
 for i in range(((Last_date - First_date).days) + 1):
    print((First_date + timedelta(i)).strftime("%Y/%m/%d"))
+
+
+#this variable stores the year which is 2020
+year = 2020
+#this variable stores the current month 1 represents January and so on
+month = 1
+#this variable represents the date
+day = 0
+#this is a list of weekdays
+days = ['Sun','Mon','Tues','Wed','Thurs','Fri','Sat']
+#since 2020/1/1 was a Wednesday so cnt = 3 to begin with
+cnt = 3
+#this is a list of all the months that have 30 days
+Month30 = [4,6,9,11]
+#this is a list of all the months that have 31 days
+Month31 = [1,3,5,7,8,10,12]
+#this is the month that contains the leap day
+Month_leap = [2]
+#the loop will run for 366 times i.e. for each day
+for d in range(366):
+#the loop is divided in three conditions, whether the current month is of 30, 31 or 29 days
+#if the month is of 30 days it will be present in the Month30 list hence this block will take control
+if month in Month30:
+#date is set to 0
+day = 0
+#a loop is run for 30 times
+for i in range(30):
+#day is incremented by 1 each time
+day += 1
+#the day is printed along with the weekDay
+print(year,"/",month,"/",day," ",days[cnt])
+#The weekDay is incremented
+cnt += 1
+#if cnt is 7 that means at 6 it was 'Sat' and now needs to go back to 'Sun '
+if cnt == 7:
+#So cnt is is made to store 0
+cnt = 0
+#The month is incremented by 1
+month += 1
+#if the month has 31 days it will be present in the Month31 list
+elif month in Month31:
+day = 0
+#This loop will now run for 31 times
+for i in range(31):
+day += 1
+print(year,"/",month,"/",day," ",days[cnt])
+#Similar logic as above for the weekdays
+cnt += 1
+if cnt == 7:
+cnt = 0
+#Month is incremented
+month += 1
+#If the month is 2 this block will take control
+elif month in Month_leap:
+day = 0
+#Code runs for 29 times
+for i in range(29):
+day += 1
+print(year,"/",month,"/",day," ",days[cnt])
+#same logic as above for weekdays
+cnt += 1
+if cnt == 7:
+cnt = 0
+#month is incremented
+month += 1
+
 
 #%%
 ###################################### Q1 ###############################
@@ -28,10 +97,10 @@ maxdays = 7 # this variable will be conditional on the month eventually. Right n
 # write a for loop, to print out the day value
 # fill in the ??????
 
-for d in range(((Last_date - First_date).days)):
-  day = d+1
-  print((First_date + timedelta(day)).strftime("%A - %Y/%m/%d"))
-
+#If the month is 2 this block will take control
+for i in range(31):
+    day = i+1
+print(year,"/",month,"/",day," ",dowt[cnt])
 
 #%%
 ###################################### Q2 ###############################
