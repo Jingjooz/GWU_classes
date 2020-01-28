@@ -12,13 +12,6 @@ print("Hello world!")
 # 2020/1/1 
 # 2020/1/2 and so forth
 
-from datetime import date, timedelta
-First_date = date(2020, 1, 1)
-Last_date = date(2020, 12, 31)
-for i in range(((Last_date - First_date).days) + 1):
-   print((First_date + timedelta(i)).strftime("%Y/%m/%d"))
-
-
 #this variable stores the year which is 2020
 year = 2020
 #this variable stores the current month 1 represents January and so on
@@ -97,10 +90,9 @@ maxdays = 7 # this variable will be conditional on the month eventually. Right n
 # write a for loop, to print out the day value
 # fill in the ??????
 
-#If the month is 2 this block will take control
-for i in range(31):
-    day = i+1
-print(year,"/",month,"/",day," ",dowt[cnt])
+for d in range(len(dowt)) :
+      day = d+1
+  print(year, '/', month, '/', day , dowt[(d+3)%7])
 
 #%%
 ###################################### Q2 ###############################
@@ -115,7 +107,36 @@ m = 3 # this will be a variable to be looped through eventually. I use the conve
 # write a condition statement to determine the maxdays depending on the m value.
 # For example, when m=0 (Jan), maxdays should be 31, m=3 (Apr), maxdays should be 30, etc.
 # Try both ways, as a chunk of codes, or a one-liner
-maxdays = ?????
+
+# Language python-3
+
+f=0
+
+m=int(input())
+
+year=int(input())
+
+# condition to check whether year is leap or not
+
+if(((year%4==0) and (year%100!=0)) or (year%400==0)):
+
+f=1
+
+# if f==1 that means year is leap and feb is of 29 days
+
+d={0:31,1:28,2:31,3:30,4:31,5:30,6:31,7:31,8:30,9:31,10:30,11:31}
+
+if f==1 and m==1:
+
+print("maxdays=",29)
+
+else:
+
+print("maxdays=",d[m])
+
+
+
+maxdays = m = 3
 print(maxdays)
 #
 # Change your m value (between 0 and 11, inclusive) and run the chunk to see if prints out the correct result.
