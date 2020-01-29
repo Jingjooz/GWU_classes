@@ -179,7 +179,6 @@ for d in range(0,16) :
       print(dowt[(d+3)%7], "-", year,'/', month,'/', day)
 
 
-
 # check your code
 
 
