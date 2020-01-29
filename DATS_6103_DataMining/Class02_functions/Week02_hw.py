@@ -3,12 +3,15 @@
 # import os
 print("Hello world!")
 
+ 
+
+
 #%%
 ###############  HW  Week02      HW  Week02      HW  Week02    ###############
 # Our Goal: print out the 366 days in 2020
 # 2020/1/1 
 # 2020/1/2 and so forth
-#
+
 
 #%%
 ###################################### Q1 ###############################
@@ -22,9 +25,10 @@ month = m+1 # this is the month to be displayed/printed. The way it is set up no
 maxdays = 7 # this variable will be conditional on the month eventually. Right now, just try 7
 # write a for loop, to print out the day value
 # fill in the ??????
-for d in ?????? :
-  day = d+1
-  print( ?????? )
+
+for d in range(len(dowt)) :
+   day = d+1
+   print(year, '/', month, '/', day , dowt[(d+3)%7])
 
 #%%
 ###################################### Q2 ###############################
@@ -39,9 +43,10 @@ m = 3 # this will be a variable to be looped through eventually. I use the conve
 # write a condition statement to determine the maxdays depending on the m value.
 # For example, when m=0 (Jan), maxdays should be 31, m=3 (Apr), maxdays should be 30, etc.
 # Try both ways, as a chunk of codes, or a one-liner
-maxdays = ?????
+
+maxdays = 31 if m == 0 else 29 if m == 1 else 31 if m == 2 else 30 if m == 3 else 31 if m == 4 else 30 if m == 5 else 31 if m == 6 else 31 if m == 7else 30 if m == 8else 31 if m == 9else 30 if m == 10else 31 if m == 11else "invalid"
 print(maxdays)
-#
+
 # Change your m value (between 0 and 11, inclusive) and run the chunk to see if prints out the correct result.
 #
 # Challenge: if you can take into account that year is multiple of 4, EXCEPT when year is multiple of 100, the days 
@@ -61,7 +66,9 @@ cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wed
 # As the cnt value changes, we want to print out the day-of-week info.
 # So 3 gives Wed, 7 gives Sat, 8 should gives Sun, and so forth.
 # use the very common method of finding the remainder (mod 7), print out that info in a single line of code
-dow = ?????
+
+dow = dowt[cnt%7]
+print(dow)
 
 #%%
 ###################################### Q4 ###############################
@@ -87,14 +94,19 @@ dowt = ('Sun','Mon','Tue','Wed','Thu','Fri','Sat') # day-of-week-tuple
 year = 2020
 cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wednesday, and keep adding one
 
-for m in ????? : # loop thru the 12 months
+for d in range(0,16) :
+      day = d+1
+      print(dowt[(d+3)%7], "-", year,'/', month,'/', day)
+
+for m in range(11) : # loop thru the 12 months
   month = ???????
   maxdays = ????????
   for d in ???????:
     day = d+1
     dow = ??????????  # day of week 
     print("???????/????/????" % (dow,year,month,day) )
-    cnt = ??????  # advance the count by 1
+    cnt = 1  # advance the count by 1
+
 
 # check your code
 
@@ -103,8 +115,15 @@ for m in ????? : # loop thru the 12 months
 ###################################### Q5 ###############################
 # A math question
 # For a integer n, let us try to find all the factors and print them out
-import math # if you ever need some math functions like floor()
+import math
 n = 1862
+
+print("factors of", n, "are")
+i = 1
+while i <= n:
+      if (n/i) == math.floor(n/i):
+            print(i)
+      i += 1
 
 # pseudocode
 # loop through an index i (from 1, not zero)
