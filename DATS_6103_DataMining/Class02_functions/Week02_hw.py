@@ -91,8 +91,8 @@ maxdays = 7 # this variable will be conditional on the month eventually. Right n
 # fill in the ??????
 
 for d in range(len(dowt)) :
-      day = d+1
-  print(year, '/', month, '/', day , dowt[(d+3)%7])
+   day = d+1
+   print(year, '/', month, '/', day , dowt[(d+3)%7])
 
 #%%
 ###################################### Q2 ###############################
@@ -108,37 +108,25 @@ m = 3 # this will be a variable to be looped through eventually. I use the conve
 # For example, when m=0 (Jan), maxdays should be 31, m=3 (Apr), maxdays should be 30, etc.
 # Try both ways, as a chunk of codes, or a one-liner
 
-# Language python-3
+year = int(input("Enter Year: "))   # taking input the year
+m = int(input("Enter Month (0-11): "))  # taking input the month;  0 for jan, 1 for feb and so on.... 
+days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] # stored the max days of the months in a list
+maxdays = 0
+if m > 11:  # condition for invalid month number
+    print("Invalid Month")  
+elif m != 1:  # if its not the month february then get it from the list 
+    maxdays = days[m]
+    print("Number of maxdays: " + str(maxdays))
+else:  # if the month is feb then check that the year is leap or not. If year is leap then days is 29 otherwise 28.
+    is_leap = False  
+    if (((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0)):  # checking the condition for leap year
+        is_leap = True
+    if is_leap == True:
+        maxdays = 29
+    else:
+        maxdays = 28
+    print("Number of maxdays: " + str(maxdays))
 
-f=0
-
-m=int(input())
-
-year=int(input())
-
-# condition to check whether year is leap or not
-
-if(((year%4==0) and (year%100!=0)) or (year%400==0)):
-
-f=1
-
-# if f==1 that means year is leap and feb is of 29 days
-
-d={0:31,1:28,2:31,3:30,4:31,5:30,6:31,7:31,8:30,9:31,10:30,11:31}
-
-if f==1 and m==1:
-
-print("maxdays=",29)
-
-else:
-
-print("maxdays=",d[m])
-
-
-
-maxdays = m = 3
-print(maxdays)
-#
 # Change your m value (between 0 and 11, inclusive) and run the chunk to see if prints out the correct result.
 #
 # Challenge: if you can take into account that year is multiple of 4, EXCEPT when year is multiple of 100, the days 
@@ -186,14 +174,11 @@ dowt = ('Sun','Mon','Tue','Wed','Thu','Fri','Sat') # day-of-week-tuple
 year = 2020
 cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wednesday, and keep adding one
 
-for m in ????? : # loop thru the 12 months
-  month = ???????
-  maxdays = ????????
-  for d in ???????:
-    day = d+1
-    dow = ??????????  # day of week 
-    print("???????/????/????" % (dow,year,month,day) )
-    cnt = ??????  # advance the count by 1
+for d in range(0,16) :
+      day = d+1
+      print(dowt[(d+3)%7], "-", year,'/', month,'/', day)
+
+
 
 # check your code
 
