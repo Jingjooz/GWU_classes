@@ -159,6 +159,8 @@ cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wed
 # So 3 gives Wed, 7 gives Sat, 8 should gives Sun, and so forth.
 # use the very common method of finding the remainder (mod 7), print out that info in a single line of code
 
+dow = dowt[cnt%7]
+print(dow)
 
 #%%
 ###################################### Q4 ###############################
@@ -200,7 +202,15 @@ for m in ????? : # loop thru the 12 months
 ###################################### Q5 ###############################
 # A math question
 # For a integer n, let us try to find all the factors and print them out
+import math
 n = 1862
+
+print("factors of", n, "are")
+i = 1
+while i <= n:
+      if (n/i) == math.floor(n/i):
+            print(i)
+      i += 1
 
 # pseudocode
 # loop through an index i (from 1, not zero)
