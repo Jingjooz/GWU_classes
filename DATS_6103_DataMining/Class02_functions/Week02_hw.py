@@ -12,71 +12,6 @@ print("Hello world!")
 # 2020/1/1 
 # 2020/1/2 and so forth
 
-#this variable stores the year which is 2020
-year = 2020
-#this variable stores the current month 1 represents January and so on
-month = 1
-#this variable represents the date
-day = 0
-#this is a list of weekdays
-days = ['Sun','Mon','Tues','Wed','Thurs','Fri','Sat']
-#since 2020/1/1 was a Wednesday so cnt = 3 to begin with
-cnt = 3
-#this is a list of all the months that have 30 days
-Month30 = [4,6,9,11]
-#this is a list of all the months that have 31 days
-Month31 = [1,3,5,7,8,10,12]
-#this is the month that contains the leap day
-Month_leap = [2]
-#the loop will run for 366 times i.e. for each day
-for d in range(366):
-#the loop is divided in three conditions, whether the current month is of 30, 31 or 29 days
-#if the month is of 30 days it will be present in the Month30 list hence this block will take control
-if month in Month30:
-#date is set to 0
-day = 0
-#a loop is run for 30 times
-for i in range(30):
-#day is incremented by 1 each time
-day += 1
-#the day is printed along with the weekDay
-print(year,"/",month,"/",day," ",days[cnt])
-#The weekDay is incremented
-cnt += 1
-#if cnt is 7 that means at 6 it was 'Sat' and now needs to go back to 'Sun '
-if cnt == 7:
-#So cnt is is made to store 0
-cnt = 0
-#The month is incremented by 1
-month += 1
-#if the month has 31 days it will be present in the Month31 list
-elif month in Month31:
-day = 0
-#This loop will now run for 31 times
-for i in range(31):
-day += 1
-print(year,"/",month,"/",day," ",days[cnt])
-#Similar logic as above for the weekdays
-cnt += 1
-if cnt == 7:
-cnt = 0
-#Month is incremented
-month += 1
-#If the month is 2 this block will take control
-elif month in Month_leap:
-day = 0
-#Code runs for 29 times
-for i in range(29):
-day += 1
-print(year,"/",month,"/",day," ",days[cnt])
-#same logic as above for weekdays
-cnt += 1
-if cnt == 7:
-cnt = 0
-#month is incremented
-month += 1
-
-
 #%%
 ###################################### Q1 ###############################
 #
@@ -108,24 +43,8 @@ m = 3 # this will be a variable to be looped through eventually. I use the conve
 # For example, when m=0 (Jan), maxdays should be 31, m=3 (Apr), maxdays should be 30, etc.
 # Try both ways, as a chunk of codes, or a one-liner
 
-year = int(input("Enter Year: "))   # taking input the year
-m = int(input("Enter Month (0-11): "))  # taking input the month;  0 for jan, 1 for feb and so on.... 
-days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] # stored the max days of the months in a list
-maxdays = 0
-if m > 11:  # condition for invalid month number
-    print("Invalid Month")  
-elif m != 1:  # if its not the month february then get it from the list 
-    maxdays = days[m]
-    print("Number of maxdays: " + str(maxdays))
-else:  # if the month is feb then check that the year is leap or not. If year is leap then days is 29 otherwise 28.
-    is_leap = False  
-    if (((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0)):  # checking the condition for leap year
-        is_leap = True
-    if is_leap == True:
-        maxdays = 29
-    else:
-        maxdays = 28
-    print("Number of maxdays: " + str(maxdays))
+maxdays = 31 if m == 0 else 29 if m == 1 else 31 if m == 2 else 30 if m == 3 else 31 if m == 4 else 30 if m == 5 else 31 if m == 6 else 31 if m == 7else 30 if m == 8else 31 if m == 9else 30 if m == 10else 31 if m == 11else "invalid"
+print(maxdays)
 
 # Change your m value (between 0 and 11, inclusive) and run the chunk to see if prints out the correct result.
 #
@@ -177,6 +96,15 @@ cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wed
 for d in range(0,16) :
       day = d+1
       print(dowt[(d+3)%7], "-", year,'/', month,'/', day)
+
+for m in range(11) : # loop thru the 12 months
+  month = ???????
+  maxdays = ????????
+  for d in ???????:
+    day = d+1
+    dow = ??????????  # day of week 
+    print("???????/????/????" % (dow,year,month,day) )
+    cnt = 1  # advance the count by 1
 
 
 # check your code
