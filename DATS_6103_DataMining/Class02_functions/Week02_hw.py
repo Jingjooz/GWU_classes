@@ -3,7 +3,9 @@
 # import os
 print("Hello world!")
 
- 
+ for d in range(0, maxdays) :
+      day = d+1
+  print(dowt[d])
 
 
 #%%
@@ -25,9 +27,9 @@ maxdays = 7 # this variable will be conditional on the month eventually. Right n
 # write a for loop, to print out the day value
 # fill in the ??????
 
-for d in range(len(dowt)):
-    day=d+1
-    print(dowt[(d+3)%7], "-", f'{year}/{month}/{day}')
+for d in range(0, maxdays) :
+    day = d+1
+    print(dowt[d])
 
 #%%
 ###################################### Q2 ###############################
@@ -43,8 +45,24 @@ m = 3 # this will be a variable to be looped through eventually. I use the conve
 # For example, when m=0 (Jan), maxdays should be 31, m=3 (Apr), maxdays should be 30, etc.
 # Try both ways, as a chunk of codes, or a one-liner
 
-maxdays = 31 if m == 0 else 29 if m == 1 else 31 if m == 2 else 30 if m == 3 else 31 if m == 4 else 30 if m == 5 else 31 if m == 6 else 31 if m == 7 else 30 if m == 8 else 31 if m == 9 else 30 if m == 10 else 31 if m == 11 else "invalid"
-print(maxdays)
+for m in range(0, 12):
+    
+    month = m
+
+    if m in [0, 2, 4, 6, 7, 9, 11]:
+
+        maxdays = 31
+
+    elif m in [3, 5, 8, 10]:
+
+        maxdays = 30
+
+    else:
+
+        maxdays = 29
+
+
+    print(month, maxdays)
 
 # Change your m value (between 0 and 11, inclusive) and run the chunk to see if prints out the correct result.
 #
@@ -94,20 +112,26 @@ dowt = ('Sun','Mon','Tue','Wed','Thu','Fri','Sat') # day-of-week-tuple
 year = 2020
 cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wednesday, and keep adding one
 
-for d in range(0,16) :
-      day = d+1
-      print(dowt[(d+3)%7], "-", f'{year}/{month}/{day}')
+for m in range(0,11) : # loop thru the 12 months
+    month = m+1
 
-for m in range(11) : # loop thru the 12 months
-  month = ???????
-  maxdays = ????????
-  for d in ???????:
-    day = d+1
-    dow = ??????????  # day of week 
-    print("???????/????/????" % (dow,year,month,day) )
-    cnt = 1  # advance the count by 1
+    if m in [0, 2, 4, 6, 7, 9, 11]:
 
+            maxdays = 31
 
+    elif m in [3, 5, 8, 10]:
+
+            maxdays = 30
+    else:
+            maxdays = 29
+
+    for d in range(0, maxdays): 
+        day = d+1
+        dow = dowt[cnt%7]  # day of week 
+
+    print('%s - %d/%d/%d' % (dow, year, month, day)  )  
+    
+    cnt += 1   # advance the count by 1
 # check your code
 
 
@@ -118,10 +142,12 @@ for m in range(11) : # loop thru the 12 months
 import math
 n = 1862
 
-n=1862
-for i in range(1, n+1):
-    if (n%i ==0):
+print("factors of", n, "are")
+i = 1
+while i <= n:
+    if (n / i) == math.floor(n / i):
         print(i)
+    i += 1
 
 # pseudocode
 # loop through an index i (from 1, not zero)
