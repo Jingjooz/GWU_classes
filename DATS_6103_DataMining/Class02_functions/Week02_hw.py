@@ -3,10 +3,6 @@
 # import os
 print("Hello world!")
 
- for d in range(0, maxdays) :
-      day = d+1
-  print(dowt[d])
-
 
 #%%
 ###############  HW  Week02      HW  Week02      HW  Week02    ###############
