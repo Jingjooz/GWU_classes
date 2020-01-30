@@ -25,9 +25,10 @@ maxdays = 7 # this variable will be conditional on the month eventually. Right n
 # write a for loop, to print out the day value
 # fill in the ??????
 
-for d in range(len(dowt)) :
-   day = d+1
-   print(year, '/', month, '/', day , dowt[(d+3)%7])
+day=tuple(range(0,1))
+for d in day:
+    day=d+1
+    print(f'{year}/{month}/{day}')
 
 #%%
 ###################################### Q2 ###############################
@@ -43,7 +44,7 @@ m = 3 # this will be a variable to be looped through eventually. I use the conve
 # For example, when m=0 (Jan), maxdays should be 31, m=3 (Apr), maxdays should be 30, etc.
 # Try both ways, as a chunk of codes, or a one-liner
 
-maxdays = 31 if m == 0 else 29 if m == 1 else 31 if m == 2 else 30 if m == 3 else 31 if m == 4 else 30 if m == 5 else 31 if m == 6 else 31 if m == 7else 30 if m == 8else 31 if m == 9else 30 if m == 10else 31 if m == 11else "invalid"
+maxdays = 31 if m == 0 else 29 if m == 1 else 31 if m == 2 else 30 if m == 3 else 31 if m == 4 else 30 if m == 5 else 31 if m == 6 else 31 if m == 7 else 30 if m == 8 else 31 if m == 9 else 30 if m == 10 else 31 if m == 11 else "invalid"
 print(maxdays)
 
 # Change your m value (between 0 and 11, inclusive) and run the chunk to see if prints out the correct result.
@@ -68,6 +69,11 @@ cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wed
 
 dow = dowt[cnt%7]
 print(dow)
+
+def dotw(year, month, day):
+    t=[0,3,2,5,0,3,5,1,4,6,2,4]
+    year -month<3
+    return(year+int(year/4)-int(year/100)+int(year/100)+int(year/400)+t[month-1]+day)%7-1
 
 #%%
 ###################################### Q4 ###############################
@@ -95,7 +101,7 @@ cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wed
 
 for d in range(0,16) :
       day = d+1
-      print(dowt[(d+3)%7], "-", year,'/', month,'/', day)
+      print(dowt[(d+3)%7], "-", f'{year}/{month}/{day}')
 
 for m in range(11) : # loop thru the 12 months
   month = ???????
@@ -117,12 +123,10 @@ for m in range(11) : # loop thru the 12 months
 import math
 n = 1862
 
-print("factors of", n, "are")
-i = 1
-while i <= n:
-      if (n/i) == math.floor(n/i):
-            print(i)
-      i += 1
+n=1862
+for i in range(1, n+1):
+    if (n%i ==0):
+        print(i)
 
 # pseudocode
 # loop through an index i (from 1, not zero)
