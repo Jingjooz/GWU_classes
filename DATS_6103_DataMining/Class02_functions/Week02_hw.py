@@ -25,10 +25,9 @@ maxdays = 7 # this variable will be conditional on the month eventually. Right n
 # write a for loop, to print out the day value
 # fill in the ??????
 
-day=tuple(range(0,1))
-for d in day:
+for d in range(len(dowt)):
     day=d+1
-    print(f'{year}/{month}/{day}')
+    print(dowt[(d+3)%7], "-", f'{year}/{month}/{day}')
 
 #%%
 ###################################### Q2 ###############################
@@ -70,10 +69,6 @@ cnt = 3 # 2020/1/1 is a Wednesday, so let us start a counting index of 3 for Wed
 dow = dowt[cnt%7]
 print(dow)
 
-def dotw(year, month, day):
-    t=[0,3,2,5,0,3,5,1,4,6,2,4]
-    year -month<3
-    return(year+int(year/4)-int(year/100)+int(year/100)+int(year/400)+t[month-1]+day)%7-1
 
 #%%
 ###################################### Q4 ###############################
