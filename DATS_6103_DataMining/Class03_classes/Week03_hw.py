@@ -74,12 +74,16 @@ courses = [
   ]
 
 def find_gpa(courses):
-  # write an appropriate and helpful docstring
-  total_grade_point_credit =0 # initialize 
-  total_credits =0 # initialize
-  # ??????    fill in your codes here
-  # gpa = ?????
-  return gpa
+  total_grade_point_credit =0
+  total_credits =0
+  for course in courses:
+    #print(course)
+    total_grade_point_credit += to_gradepoint_credit(course)
+    total_credits += course["credits"]
+    
+    gpa=total_grade_point_credit/total_credits
+    print(gpa)
+    return gpa
 
 # Try:
 print(" %.2f " % find_gpa(courses) )
