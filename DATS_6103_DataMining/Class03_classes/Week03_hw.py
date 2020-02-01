@@ -1,6 +1,9 @@
 
 ###############  HW  Week03      HW  Week03      HW  Week03    ###############
 # We first continue to complete the grade record that we were working on in class.
+#%%
+
+  
 
 #%%
 ###################################### Q1 ###############################
@@ -97,15 +100,17 @@ print(" %.2f " % find_gpa(courses) )
 # Write a function to print out a grade record for a single class. 
 # The return statement for such functions should be None or just blank
 # while during the function call, it will display the print.
-course = { "class":"IntroDS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'B-', "credits":3 } 
+course = { "class":"Intro to DS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'B-', "credits":3 } 
 
 def printCourseRecord(course):
-  # write an appropriate and helpful docstring
-  # use a single print() statement to print out a line of info as shown here
-  # 2018 spring - DATS 6101 : Intro to DS (3 credits) B-  Grade point credits: 8.10 
-  # ??????    fill in your codes here
-  return # or return None
-  
+# write an appropriate and helpful docstring
+# use a single print() statement to print out a line of info as shown here
+#2018 spring - DATS 6101 : Intro to DS (3 credits) B-  Grade point credits: 8.10 
+# ??????    fill in your codes here
+  Course_record = course['credits']*to_gradepoint(course['grade'])
+  print(course['year'], course['semester'], "-", course['id'], ":", course['class'], '(', course['credits'], "credits",  ')', course['grade'], "Grade point credits:", " %.2f" % Course_record)
+  return 
+
 # Try:
 printCourseRecord(course)
 
