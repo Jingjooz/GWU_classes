@@ -29,9 +29,8 @@ print(find_grade(total))
 grade = 'C-'
 
 def to_gradepoint(grade):
-  # write an appropriate and helpful docstring
-  # ??????    fill in your codes here, be sure you have all A, A-, ... thru D, and F grades completed.
-  # gradepoint = ???
+  gradepoint=4 if (grade=='A') else 3.7 if (grade=='A-') else 3.3 if (grade=='B+') else 3.0 if (grade=='B') else 2.7 if (grade=='B-') else 2.3 if (grade=='c+') else 2.0 if (grade=='C') else 1.7 if (grade=='C-') else 1.3 if (grade=='D+') else 1.0 if (grade=='D') else 0.7 if (grade=='D-') else 0
+  # print(grade)
   return gradepoint
 
 # Try:
