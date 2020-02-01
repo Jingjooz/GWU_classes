@@ -44,15 +44,12 @@ print(to_gradepoint(grade))
 ###################################### Q3 ###############################
 # next the function to_gradepoint_credit(course)
 # which calculates the total weight grade points you earned in one course. Say A- with 3 credits, that's 11.1 total grade_point_credit
-course = { "class":"IntroDS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'B-', "credits":3 } 
+
+course = { "class":"IntroDS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'A-', "credits":3 } 
 
 def to_gradepoint_credit(course):
-  # write an appropriate and helpful docstring
-  # ??????    fill in your codes here
-  # grade_point_credit = ?????
-  # eventually, if you need to print out the value to 2 decimal, you can 
-  # try something like this for floating point values %f
-  # print(" %.2f " % grade_point_credit)
+  grade_point_credit= course['credits']*to_gradepoint(course['grade'])
+  print(" %.2f" % grade_point_credit)
   return grade_point_credit
 
 # Try:
