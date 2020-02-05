@@ -154,22 +154,14 @@ printTranscript(courses)
 # Let's set it up from here:
 
 def fib(n):
-  """
-  Finding the Fibonacci sequence with seeds of 0 and 1
-  The sequence is 0,1,1,2,3,5,8,13,..., where 
-  the recursive relation is fib(n) = fib(n-1) + fib(n-2)
-  :param n: the index, starting from 0
-  :return: the sequence
-  """
-  # assume n is positive integer
-  # ??????    fill in your codes here
+    if(n<=1):
+        return n
+    else:
+        return (fib(n-1)+fib(n-2))
 
-  return # return what ????
-
-
-# Try:
-print(fib(6))  # should gives 8
-print(fib(7))  # should gives 13
+# Try
+print(fib(6))  #should gives 8
+print(fib(7))  #should gives 13
 
 
 
