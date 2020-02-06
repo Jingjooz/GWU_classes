@@ -20,9 +20,10 @@ def find_grade(total):
 # Try:
 print(find_grade(total))
 
-# Also answer these: 
 # What is the input (function argument) data type for total? 
+print(type(total)) #float
 # What is the output (function return) data type for find_grade(total) ?
+print(type(grade)) #string
 
 
 #%%
@@ -40,7 +41,9 @@ def to_gradepoint(grade):
 print(to_gradepoint(grade))
 
 # What is the input (function argument) data type for find_grade? 
+print(type(grade)) #Answer is "string"
 # What is the output (function return) data type for find_grade(grade) ?
+#Answer is "float"
 
 
 #%%
@@ -59,7 +62,10 @@ def to_gradepoint_credit(course):
 print(" %.2f " % to_gradepoint_credit(course) )
 
 # What is the input (function argument) data type for to_gradepoint_credit? 
+print(type(course)) #Answer is "Dictionary"
 # What is the output (function return) data type for to_gradepoint_credit(course) ?
+print(type(to_gradepoint_credit(course))) 
+#Answer is "float"
 
 
 #%%
@@ -86,13 +92,15 @@ def find_gpa(courses):
     
     gpa=total_grade_point_credit/total_credits
     print(gpa)
-    return gpa
+  return gpa
 
 # Try:
 print(" %.2f " % find_gpa(courses) )
 
 # What is the input (function argument) data type for find_gpa? 
+print(type(courses)) #Answer is "list"
 # What is the output (function return) data type for find_gpa(courses) ?
+print(type(find_gpa(courses))) #Answer is "Float"
 
 
 #%%
@@ -115,7 +123,9 @@ def printCourseRecord(course):
 printCourseRecord(course)
 
 # What is the input (function argument) data type for printCourseRecord? 
+print(type(course)) #Answer is Dictionary
 # What is the output (function return) data type for printCourseRecord(course) ?
+#Answer is list
 
 
 #%%
@@ -125,23 +135,46 @@ printCourseRecord(course)
 # 2018 fall - DATS 6102 : Data Warehousing (4 credits) A-  Grade point credits: 14.80 
 # ........  few more lines
 # Cumulative GPA: ?????
- 
-def printTranscript(courses):
-  # write an appropriate and helpful docstring
-  for course in courses:
-    # print out each record as before
-  
-  # after the completion of the loop, print out a new line with the gpa info
-  
-  return # or return None
 
-# Try to run, see if it works as expected to produce the desired result
-# courses is already definted in Q4
+# write a function (with arguement of courses) to print out the complete transcript and the gpa at the end
+
+# 2018 spring - DATS 6101 : Intro to DS (3 credits) B- Grade point credits: 8.10
+
+# 2018 fall - DATS 6102 : Data Warehousing (4 credits) A- Grade point credits: 14.80
+
+# ........ few more lines
+
+# Cumulative GPA: ?????
+
+courses = [ 
+  { "class":"Intro to DS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'B-', "credits":3 } , 
+  { "class":"Data Warehousing", "id":"DATS 6102", "semester":"fall", "year":2018, "grade":'A-', "credits":4 } , 
+  { "class":"Intro Data Mining", "id":"DATS 6103", "semester":"spring", "year":2018, "grade":'A', "credits":3 } ,
+  { "class":"Machine Learning I", "id":"DATS 6202", "semester":"fall", "year":2018, "grade":'B+', "credits":4 } , 
+  { "class":"Machine Learning II", "id":"DATS 6203", "semester":"spring", "year":2019, "grade":'A-', "credits":4 } , 
+  { "class":"Visualization", "id":"DATS 6401", "semester":"spring", "year":2019, "grade":'C+', "credits":3 } , 
+  { "class":"Capstone", "id":"DATS 6101", "semester":"fall", "year":2019, "grade":'A-', "credits":3 } 
+  ]
+
+def printTranscript(courses):
+  grades = {'A':4, 'A-':3.7, 'B+':3.3, 'B':3, 'B-':2.7, 'C+':2.3, 'C':2, 'C-':1.7, 'D+':1.3, 'D':1, 'D-':0.7, 'F':0}
+  total_gpa = 0
+  total_creds = 0
+  for course in courses:
+    gpa = (course['credits']*grades[course['grade']])
+    total_gpa += gpa
+    total_creds += course['credits']
+    print(str(course['year'])+" "+course['semester']+" - "+course['id']+" : "+course['class']+" ("+str(course['credits'])+" credits) "+course['grade']+" Grade point credits: "+("%.2f"%gpa))
+    print("Cumulative GPA: "+str((total_gpa/total_creds)*1))
+  return # or return None
+  
 printTranscript(courses)
 
-# What is the input (function argument) data type for printTranscript? 
-# What is the output (function return) data type for printTranscript(courses) ?
 
+# What is the input (function argument) data type for printTranscript? 
+print(type(courses)) #Answer is list
+# What is the output (function return) data type for printTranscript(courses) ?
+#Answer is string # becuase of print("Cumulative GPA: "+str((total_gpa/total_creds)*1)) # str function is converting the numbers to a string
 
 
 #%% 
