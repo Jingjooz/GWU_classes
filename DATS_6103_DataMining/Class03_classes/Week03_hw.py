@@ -10,10 +10,16 @@
 total = 62.1
 
 def find_grade(total):
+<<<<<<< HEAD
   # write an appropriate and helpful docstring
   # ??????    fill in your codes here, be sure you have all A, A-, ... thru D, and F grades completed.
   # grade = ???
   return grade
+=======
+  grade = 'A' if (total>=93) else 'A-' if (total>=90) else 'B+' if (total>=87) else 'B' if (total>=83) else 'B-' if (total>=80) else 'C+' if (total>=77) else 'C' if (total>=73) else 'C-' if (total>=70)else 'D' if (total>=60) else 'F'
+  #print(grade)
+  return grade 
+>>>>>>> 17fc13a11366ddbe2c7bba4fbba0e9a57bb25290
 
 # Try:
 print(find_grade(total))
@@ -30,9 +36,14 @@ print(find_grade(total))
 grade = 'C-'
 
 def to_gradepoint(grade):
+<<<<<<< HEAD
   # write an appropriate and helpful docstring
   # ??????    fill in your codes here, be sure you have all A, A-, ... thru D, and F grades completed.
   # gradepoint = ???
+=======
+  gradepoint=4 if (grade=='A') else 3.7 if (grade=='A-') else 3.3 if (grade=='B+') else 3.0 if (grade=='B') else 2.7 if (grade=='B-') else 2.3 if (grade=='c+') else 2.0 if (grade=='C') else 1.7 if (grade=='C-') else 1.3 if (grade=='D+') else 1.0 if (grade=='D') else 0.7 if (grade=='D-') else 0
+  # print(grade)
+>>>>>>> 17fc13a11366ddbe2c7bba4fbba0e9a57bb25290
   return gradepoint
 
 # Try:
@@ -46,6 +57,7 @@ print(to_gradepoint(grade))
 ###################################### Q3 ###############################
 # next the function to_gradepoint_credit(course)
 # which calculates the total weight grade points you earned in one course. Say A- with 3 credits, that's 11.1 total grade_point_credit
+<<<<<<< HEAD
 course = { "class":"IntroDS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'B-', "credits":3 } 
 
 def to_gradepoint_credit(course):
@@ -55,6 +67,14 @@ def to_gradepoint_credit(course):
   # eventually, if you need to print out the value to 2 decimal, you can 
   # try something like this for floating point values %f
   # print(" %.2f " % grade_point_credit)
+=======
+
+course = { "class":"IntroDS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'A-', "credits":3 } 
+
+def to_gradepoint_credit(course):
+  grade_point_credit= course['credits']*to_gradepoint(course['grade'])
+  print(" %.2f" % grade_point_credit)
+>>>>>>> 17fc13a11366ddbe2c7bba4fbba0e9a57bb25290
   return grade_point_credit
 
 # Try:
@@ -79,12 +99,25 @@ courses = [
   ]
 
 def find_gpa(courses):
+<<<<<<< HEAD
   # write an appropriate and helpful docstring
   total_grade_point_credit =0 # initialize 
   total_credits =0 # initialize
   # ??????    fill in your codes here
   # gpa = ?????
   return gpa
+=======
+  total_grade_point_credit =0
+  total_credits =0
+  for course in courses:
+    #print(course)
+    total_grade_point_credit += to_gradepoint_credit(course)
+    total_credits += course["credits"]
+    
+    gpa=total_grade_point_credit/total_credits
+    print(gpa)
+    return gpa
+>>>>>>> 17fc13a11366ddbe2c7bba4fbba0e9a57bb25290
 
 # Try:
 print(" %.2f " % find_gpa(courses) )
@@ -98,6 +131,7 @@ print(" %.2f " % find_gpa(courses) )
 # Write a function to print out a grade record for a single class. 
 # The return statement for such functions should be None or just blank
 # while during the function call, it will display the print.
+<<<<<<< HEAD
 course = { "class":"IntroDS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'B-', "credits":3 } 
 
 def printCourseRecord(course):
@@ -107,6 +141,19 @@ def printCourseRecord(course):
   # ??????    fill in your codes here
   return # or return None
   
+=======
+course = { "class":"Intro to DS", "id":"DATS 6101", "semester":"spring", "year":2018, "grade":'B-', "credits":3 } 
+
+def printCourseRecord(course):
+# write an appropriate and helpful docstring
+# use a single print() statement to print out a line of info as shown here
+#2018 spring - DATS 6101 : Intro to DS (3 credits) B-  Grade point credits: 8.10 
+# ??????    fill in your codes here
+  Course_record = course['credits']*to_gradepoint(course['grade'])
+  print(course['year'], course['semester'], "-", course['id'], ":", course['class'], '(', course['credits'], "credits",  ')', course['grade'], "Grade point credits:", " %.2f" % Course_record)
+  return 
+
+>>>>>>> 17fc13a11366ddbe2c7bba4fbba0e9a57bb25290
 # Try:
 printCourseRecord(course)
 
